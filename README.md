@@ -1,5 +1,5 @@
-# ML engineer Salary Estimator: Project Overview 
-* Created a tool that estimates ML engineer salaries (MAE ~ $ 11K) to help ML engineers negotiate their income when they get a job.
+# Data Scientist Salary Estimator: Project Overview 
+* Created a tool that estimates Data Scienctist salaries (MAE ~ $ 11K) to help Data Scientist negotiate their income when they get a job.
 * Scraped over 1000 job descriptions from glassdoor using python and selenium
 * Engineered features from the text of each job description to quantify the value companies put on python, excel, aws, and spark. 
 * Optimized Linear, Lasso, and Random Forest Regressors using RandomsearchCV to reach the best model. 
