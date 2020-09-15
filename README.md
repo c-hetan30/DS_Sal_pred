@@ -1,12 +1,12 @@
-# Data Science Salary Estimator: Project Overview 
-* Created a tool that estimates data science salaries (MAE ~ $ 11K) to help data scientists negotiate their income when they get a job.
+# ML engineer Salary Estimator: Project Overview 
+* Created a tool that estimates ML engineer salaries (MAE ~ $ 11K) to help ML engineers negotiate their income when they get a job.
 * Scraped over 1000 job descriptions from glassdoor using python and selenium
 * Engineered features from the text of each job description to quantify the value companies put on python, excel, aws, and spark. 
-* Optimized Linear, Lasso, and Random Forest Regressors using GridsearchCV to reach the best model. 
+* Optimized Linear, Lasso, and Random Forest Regressors using RandomsearchCV to reach the best model. 
 * Built a client facing API using flask 
 
 ## Code and Resources Used 
-**Python Version:** 3.7  
+**Python Version:** 3.6  
 **Packages:** pandas, numpy, sklearn, matplotlib, seaborn, selenium, flask, json, pickle  
 **For Web Framework Requirements:**  ```pip install -r requirements.txt```  
 **References - ** https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
@@ -14,7 +14,7 @@
 
 
 ## Web Scraping
-Tweaked the web scraper github repo (above) to scrape 1000 job postings from glassdoor.com. With each job, we got the following:
+Tweaked the web scraper github repo to scrape 1000 job postings from glassdoor.com. With each job, we got the following:
 *	Job title
 *	Salary Estimate
 *	Job Description
@@ -49,5 +49,3 @@ After scraping the data, I needed to clean it up so that it was usable for our m
 *	Column for simplified job title and Seniority 
 *	Column for description length 
 
-## EDA
-I looked at the distributions of the data and the value counts for the various categorical variables. Below are a few highlights from the pivot tables. 
