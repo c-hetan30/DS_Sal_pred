@@ -1,4 +1,14 @@
 import pandas as pd 
+from cleaning_functions import LocationToState
+
+df1 = pd.read_csv('glassdoor_jobs_DS.csv')
+df2 = pd.read_csv('glassdoor_jobs_AI.csv')
+df3 = pd.read_csv('glassdoor_jobs_ML.csv')
+
+df_temp = df1.append(df2)
+df_temp = df_temp.append(df3)
+
+df_temp.to_csv('glassdoor_jobs.csv',index = False)
 
 df = pd.read_csv('glassdoor_jobs.csv')
 
@@ -21,7 +31,8 @@ df['avg_salary'] = (df.min_salary+df.max_salary)/2
 df['company_txt'] = df.apply(lambda x: x['Company Name'] if x['Rating'] <0 else x['Company Name'][:-3], axis = 1)
 
 #state field 
-df['job_state'] = df['Location'].apply(lambda x: x.split(',')[1])
+#df['job_state'] = df['Location'].apply(lambda x: x.split(',')[1])
+df['job_state'] = df['Location'].apply(LocationToState)
 df.job_state.value_counts()
 
 df['same_state'] = df.apply(lambda x: 1 if x.Location == x.Headquarters else 0, axis = 1)
